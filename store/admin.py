@@ -8,3 +8,8 @@ class AddressAdmin(admin.ModelAdmin):
     list_display = ['zip_code', ]
 
 
+@admin.register(Seller)
+class SellerAdmin(admin.ModelAdmin):
+    list_display = ['fantasy_name', ]
+
+

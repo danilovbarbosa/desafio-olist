@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import CASCADE
+
 
 class Address(models.Model):
     '''
@@ -17,5 +19,8 @@ class Seller(models.Model):
     cnpj = models.CharField(max_length=20, unique=True)
     email = models.EmailField(max_length=150)
     phone = models.CharField(max_length=15)
+    complete_address = models.ForeignKey(Addressm, on_delete=models.CASCADE)
+
+
 
 

@@ -18,8 +18,8 @@ class Seller(models.Model):
     fantasy_name = models.CharField(max_length=200)
     company_name = models.CharField(max_length=200)
     cnpj = models.CharField(max_length=20, unique=True)
-    email = models.EmailField(max_length=150)
-    phone = models.CharField(max_length=15)
+    email = models.EmailField(max_length=200)
+    contact_phone = models.CharField(max_length=15)
     complete_address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
 
@@ -33,3 +33,10 @@ class Product(models.Model):
     value = models.FloatField()
     categories = models.ManyToManyField(Categorie)
 
+class Marketplace(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    site = models.CharField(max_length=200)
+    contact_phone = models.CharField(max_length=15)
+    email = models.EmailField(max_length=200)
+    contact_technical_manager = models.CharField(max_length=15)

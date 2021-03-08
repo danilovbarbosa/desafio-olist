@@ -31,5 +31,5 @@ class Product(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     value = models.FloatField()
-    categories = models.ForeignKey(Categorie, on_delete=models.CASCADE)
+    categorie = models.ManyToManyField(Categorie, on_delete=models.CASCADE)
 

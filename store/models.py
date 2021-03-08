@@ -48,6 +48,12 @@ class Product(models.Model):
     value = models.FloatField()
     categories = models.ManyToManyField(Categorie)
 
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
 
 class Marketplace(models.Model):
     name = models.CharField(max_length=200)

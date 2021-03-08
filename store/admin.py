@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from store.models import Seller, Address
+from store.models import Seller, Address, Categorie, Product
 
 
 @admin.register(Address)
@@ -13,3 +13,11 @@ class SellerAdmin(admin.ModelAdmin):
     list_display = ['fantasy_name', ]
 
 
+@admin.register(Categorie)
+class CategorieAdmin(admin.ModelAdmin):
+    list_display = ['name', ]
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ['name', 'value', ]

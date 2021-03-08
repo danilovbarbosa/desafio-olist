@@ -13,6 +13,7 @@ class Address(models.Model):
     number = models.CharField(max_length=20)
     zip_code = models.CharField(max_length=10)
 
+
 class Seller(models.Model):
     fantasy_name = models.CharField(max_length=200)
     company_name = models.CharField(max_length=200)
@@ -22,5 +23,13 @@ class Seller(models.Model):
     complete_address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
 
+class Categorie(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
 
+class Product(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    value = models.FloatField()
+    categories = models.ForeignKey(Categorie, on_delete=models.CASCADE)
 

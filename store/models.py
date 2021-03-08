@@ -3,15 +3,18 @@ from django.db.models import CASCADE
 
 
 class Address(models.Model):
-    '''
-    TODO: to implement complete address;
-    '''
     country = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     street = models.CharField(max_length=200)
     number = models.CharField(max_length=20)
     zip_code = models.CharField(max_length=10)
+
+    class Meta:
+        ordering = ['country']
+
+    def __str__(self):
+        return self.street
 
 
 class Seller(models.Model):

@@ -27,11 +27,13 @@ class Categorie(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
 
+
 class Product(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     value = models.FloatField()
     categories = models.ManyToManyField(Categorie)
+
 
 class Marketplace(models.Model):
     name = models.CharField(max_length=200)

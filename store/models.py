@@ -35,6 +35,12 @@ class Categorie(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
 
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
 
 class Product(models.Model):
     name = models.CharField(max_length=200)

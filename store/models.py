@@ -62,3 +62,9 @@ class Marketplace(models.Model):
     contact_phone = models.CharField(max_length=15)
     email = models.EmailField(max_length=200)
     contact_technical_manager = models.CharField(max_length=15)
+
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name

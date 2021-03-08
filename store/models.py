@@ -25,6 +25,11 @@ class Seller(models.Model):
     contact_phone = models.CharField(max_length=15)
     complete_address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
+    class Meta:
+        ordering = ['fantasy_name']
+
+    def __str__(self):
+        return self.fantasy_name
 
 class Categorie(models.Model):
     name = models.CharField(max_length=200)
